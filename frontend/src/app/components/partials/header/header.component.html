@@ -1,0 +1,24 @@
+<header class="navbar navbar-light">
+  <a routerLink="/" class="logo"
+    ><img src="/assets/images/logo.png" alt="logo" />PC Ekipmanlarına Dair
+    Aradığın Her Şey!</a
+  >
+  <nav>
+    <ul>
+      <li *ngIf="!isAuth">
+        <a routerLink="/giris">Giriş Yap</a>
+      </li>
+      <li *ngIf="isAuth" class="menu-container">
+        <a routerLink="/dashboard">{{ user.name }}</a>
+        <div class="menu">
+          <a (click)="logout()">Çıkış Yap</a>
+        </div>
+      </li>
+      <li>
+        <a routerLink="/sepet">
+          Sepet <span *ngIf="totalCount$">{{ totalCount$ | async }}</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>

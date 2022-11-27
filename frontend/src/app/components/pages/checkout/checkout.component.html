@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="content">
+    <app-title title="Ödeme Formu" fontSize="1.6rem"></app-title>
+    <form [formGroup]="checkoutForm">
+      <div class="input-container">
+        <label>İsim</label>
+        <div>
+          <input type="text" placeholder="İsim" formControlName="name" />
+        </div>
+      </div>
+
+      <div class="input-container">
+        <label>Adres</label>
+        <div>
+          <input type="text" placeholder="Adres" formControlName="address" />
+        </div>
+      </div>
+    </form>
+
+    <order-items-list [order]="order"></order-items-list>
+  </div>
+  <div class="map">
+    <app-title title="Haritadan Adresinizi Seçin" fontSize="1.6rem"></app-title>
+    <map [order]="order"></map>
+  </div>
+  <div class="buttons-container">
+    <div class="buttons">
+      <button (click)="createOrder()">Ödeme Yap</button>
+    </div>
+  </div>
+</div>

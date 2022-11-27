@@ -1,0 +1,61 @@
+<!--* Sepet sayfasında görünecek başlık (title) için "title" ve "margin" değişkenlerine değer gönderiliyor. -->
+<app-title title="Sepet" margin="1.5rem 0 0 2.5rem"></app-title>
+
+<!--* Sepette herhangi bir ürün bulunmuyor ise "not-found" component'i gösterilmektedir. -->
+<app-not-found
+  [isVisible]="!cart.length"
+  message="Sepette herhangi bir ürün bulunmamaktadır!"
+  linkText="Ana sayfaya git."
+></app-not-found>
+
+<div *ngIf="cart.length" class="container">
+  <ul>
+    <li *ngFor="let item of cart$ | async">
+      <div>
+        <img [src]="item.product.imageUrl" [alt]="item.product.name" />
+      </div>
+
+      <div>
+        <a routerLink="/urun/{{ item.product.id }}">
+          {{ item.product.name }}
+        </a>
+      </div>
+
+      <div>
+        <button
+          type="button"
+          class="btn btn-outline-primary"
+          (click)="addProduct(item)"
+        >
+          Ekle
+        </button>
+      </div>
+
+      <div>
+        {{ item.quantity }}
+      </div>
+
+      <div>
+        {{ item.product.price + "₺" }}
+      </div>
+
+      <div>
+        <button
+          type="button"
+          class="btn btn-outline-danger"
+          (click)="removeFromCart(item)"
+        >
+          <span class="btn-label"><i class="fa fa-trash"></i></span> Sil
+        </button>
+      </div>
+    </li>
+  </ul>
+  <div class="checkout">
+    <div>
+      <div class="foods-count">{{ totalCount$ | async }}</div>
+      <div class="total-price">{{ totalPrice$ | async }} ₺</div>
+    </div>
+
+    <a routerLink="/odeme">Ödeme Sayfasına İlerle</a>
+  </div>
+</div>

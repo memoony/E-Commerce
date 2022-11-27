@@ -1,0 +1,109 @@
+div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+div a {
+  background-color: #f0f0f0;
+  padding: 0.3rem 1rem;
+  margin: 0.2rem 0.15rem;
+  border-radius: 10rem;
+  font-weight: 600;
+  color: #7393b3;
+}
+
+.btn-radius {
+  border-radius: 100px !important;
+}
+
+.btn {
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-radius: 2px;
+  padding: 13px 28px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.14);
+  text-transform: uppercase;
+  box-shadow: 0 4px 9px 0 rgba(0, 0, 0, 0.2);
+}
+
+.btn-sm {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 11px 25px;
+}
+
+.btn-light {
+  background: #f2f2f2;
+  background: -moz-linear-gradient(
+    -45deg,
+    #f2f2f2 0%,
+    #dddddd 50%,
+    #ffffff 51%,
+    #ffffff 71%,
+    #f6f8fb 100%
+  );
+  background: -webkit-linear-gradient(
+    -45deg,
+    #f2f2f2 0%,
+    #dddddd 50%,
+    #ffffff 51%,
+    #ffffff 71%,
+    #f6f8fb 100%
+  );
+  background: linear-gradient(
+    135deg,
+    #f2f2f2 0%,
+    #dddddd 50%,
+    #ffffff 51%,
+    #ffffff 71%,
+    #f6f8fb 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', endColorstr='#f6f8fb',GradientType=1 );
+  color: #3f345f !important;
+  background-size: 400% 400%;
+  -webkit-animation: AnimationName 3s ease infinite;
+  -moz-animation: AnimationName 3s ease infinite;
+  animation: AnimationName 3s ease infinite;
+  -webkit-animation: AnimationName 3s ease infinite;
+  -moz-animation: AnimationName 3s ease infinite;
+  animation: AnimationName 3s ease infinite;
+  border: medium none;
+}
+
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 0% 31%;
+  }
+  50% {
+    background-position: 100% 70%;
+  }
+  100% {
+    background-position: 0% 31%;
+  }
+}
+
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 0% 31%;
+  }
+  50% {
+    background-position: 100% 70%;
+  }
+  100% {
+    background-position: 0% 31%;
+  }
+}
+
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 31%;
+  }
+  50% {
+    background-position: 100% 70%;
+  }
+  100% {
+    background-position: 0% 31%;
+  }
+}

@@ -1,0 +1,13 @@
+<div class="list-group" *ngIf="categories">
+  <div class="text-center">
+    <h6 class="card-title">Kategoriler</h6>
+    <a
+      type="button"
+      class="list-group-item list-group-item-action btn btn-light btn-radius"
+      *ngFor="let category of categories"
+      routerLink="/kategori/{{ category.url }}"
+    >
+      {{ category.name }}
+    </a>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="text-center">
+  <input
+    #s
+    type="text"
+    placeholder="Ürün Ara"
+    (keyup.enter)="search(s.value)"
+    [value]="searchTerm"
+  />
+  <button (click)="search(s.value)">Ara</button>
+</div>

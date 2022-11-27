@@ -1,0 +1,36 @@
+<table>
+  <tr>
+    <td colspan="5">
+      <h3>Ürünler:</h3>
+    </td>
+  </tr>
+  <tr *ngFor="let item of order.products">
+    <td>
+      <a routerLink="/urun/{{ item.product.id }}">
+        <img [src]="item.product.imageUrl" [alt]="item.product.name" />
+      </a>
+    </td>
+
+    <td>
+      {{ item.product.name }}
+    </td>
+
+    <td>
+      {{ item.product.price + "₺" }}
+    </td>
+
+    <td>Adet: {{ item.quantity }}</td>
+  </tr>
+
+  <tr>
+    <td colspan="3"></td>
+
+    <td>
+      <strong>Toplam Fiyat:</strong>
+    </td>
+
+    <td>
+      <strong> {{ order.totalPrice }} ₺ </strong>
+    </td>
+  </tr>
+</table>

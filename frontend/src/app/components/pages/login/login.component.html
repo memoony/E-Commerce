@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="details">
+    <app-title title="Giriş Yap"></app-title>
+
+    <form [formGroup]="loginForm" (ngSubmit)="submit()">
+      <div class="input-container">
+        <label>E-Posta</label>
+        <div class="content">
+          <input
+            type="email"
+            placeholder="E-Posta Adresi"
+            formControlName="email"
+          />
+        </div>
+
+        <div class="input-validation">
+          <div class="error-list" *ngIf="fc.email.errors && isSubmitted">
+            <div *ngIf="fc.email.errors.required">
+              Bu alan boş bırakılamaz!
+            </div>
+            <div *ngIf="fc.email.errors.email">
+              E-posta formatı yanlış!
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="input-container">
+        <label>Şifre</label>
+        <div class="content">
+          <input
+            type="password"
+            placeholder="Şifre"
+            formControlName="password"
+          />
+        </div>
+
+        <div class="input-validation">
+          <div class="error-list" *ngIf="fc.password.errors && isSubmitted">
+            <div *ngIf="fc.password.errors.required">
+              Bu alan boş bırakılamaz!
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="button">
+        <button type="submit">Giriş Yap</button>
+      </div>
+    </form>
+  </div>
+</div>
